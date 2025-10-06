@@ -9,10 +9,6 @@ from PIL import Image
 import io
 from supabase import create_client, Client
 import base64
-from supabase import create_client
-
-SUPABASE_URL = st.secrets["SUPABASE_URL"]
-SUPABASE_KEY = st.secrets["SUPABASE_KEY"]
 
 client = create_client(SUPABASE_URL, SUPABASE_KEY)
 
@@ -25,7 +21,7 @@ def Clean_India():
 
     # Fetch existing data (optional — can comment this out)
     try:
-        rows = client.table("cleanindia").select("*").execute()
+        rows = conn.client.table("cleanindia").select("*").execute()
     except Exception as e:
         st.error(f"Error fetching data: {e}")
 
@@ -80,7 +76,7 @@ def Clean_India():
             }
 
             # Insert data into Supabase
-            response = client.table("cleanindia").insert(data).execute()
+            response = conn.client.table("cleanindia").insert(data).execute()
 
             if hasattr(response, "data") and response.data:
                 st.success("✅ Thank you for reporting the issue! Your report has been submitted successfully.")
@@ -106,7 +102,7 @@ def All_Complaints():
     conn = st.connection("supabase", type=SupabaseConnection)
 
     try:
-        response = client.table("cleanindia").select("*").execute()
+        response = conn.client.table("cleanindia").select("*").execute()
         rows = response.data
     except Exception as e:
         st.error(f"Error fetching data: {e}")
@@ -150,5 +146,6 @@ def All_Complaints():
 
 pg = st.navigation([Clean_India,All_Complaints], position="sidebar")
 pg.run()
+
 
 
