@@ -11,7 +11,7 @@ from supabase import create_client, Client
 import base64
 
 def Clean_India():
-    st.title("Clean India!")
+    st.title("Fix India!")
     st.subheader("Share your civic issues with us and help us make India cleaner and better!")
 
     # Connect to Supabase (requires SUPABASE_URL and SUPABASE_KEY in .streamlit/secrets.toml)
@@ -144,6 +144,7 @@ def All_Complaints():
 
 pg = st.navigation([Clean_India,All_Complaints], position="sidebar")
 pg.run()
+
 
 
 
