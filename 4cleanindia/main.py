@@ -3,15 +3,12 @@ from st_supabase_connection import SupabaseConnection
 import pandas as pd
 import numpy as np
 from streamlit_js_eval import streamlit_js_eval, copy_to_clipboard, create_share_link, get_geolocation
-import json
-import csv
 from PIL import Image
-import io
 from supabase import create_client, Client
 import base64
 
 def Clean_India():
-    st.title("Fix India!")
+    st.title("Fix it!")
     st.subheader("Share your civic issues with us and help us make India cleaner and better!")
 
     # Connect to Supabase (requires SUPABASE_URL and SUPABASE_KEY in .streamlit/secrets.toml)
@@ -144,6 +141,7 @@ def All_Complaints():
 
 pg = st.navigation([Clean_India,All_Complaints], position="sidebar")
 pg.run()
+
 
 
 
