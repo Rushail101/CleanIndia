@@ -1,6 +1,4 @@
 streamlit>=1.25.0
-streamlit-supabase-connection
-st-supabase-connection
 streamlit-js-eval
 supabase-py
 pillow
