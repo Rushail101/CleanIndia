@@ -1,6 +1,7 @@
-streamlit>=1.25.0
+streamlit
+st-supabase-connection
 streamlit-js-eval
-supabase-py
-pillow
 pandas
 numpy
+Pillow
+supabase
