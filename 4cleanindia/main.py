@@ -10,8 +10,6 @@ import io
 from supabase import create_client, Client
 import base64
 
-client = create_client(SUPABASE_URL, SUPABASE_KEY)
-
 def Clean_India():
     st.title("Clean India!")
     st.subheader("Share your civic issues with us and help us make India cleaner and better!")
@@ -146,6 +144,7 @@ def All_Complaints():
 
 pg = st.navigation([Clean_India,All_Complaints], position="sidebar")
 pg.run()
+
 
 
 
